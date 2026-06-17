@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ============================================================
+         Plain — flat off-white neutral, no texture. A clean surface.
+         ============================================================ -->
+
+    <SolidColorBrush x:Key="BoardBackgroundBrush" Color="#f4f2ee" />
+
+    <!-- Flat base tone (Plain has no texture, so this matches the surface). -->
+    <SolidColorBrush x:Key="BoardBaseColorBrush" Color="#f4f2ee" />
+
+</ResourceDictionary>

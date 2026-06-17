@@ -1,0 +1,83 @@
+<UserControl x:Class="PinBoard.Controls.ClipControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Width="{Binding Width}" Height="{Binding Height}"
+             d:DesignWidth="190" d:DesignHeight="190">
+
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Open file" Click="OpenFile_Click" />
+            <MenuItem Header="Remove from board" Click="Remove_Click" />
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <Grid>
+        <!-- Image clip: white framed thumbnail -->
+        <Border x:Name="ImageFrame" Margin="0,10,0,0" Background="White" Padding="6" CornerRadius="2"
+                MouseLeftButtonDown="Drag_MouseLeftButtonDown"
+                MouseMove="Drag_MouseMove"
+                MouseLeftButtonUp="Drag_MouseLeftButtonUp">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="14" ShadowDepth="4" Direction="300"
+                                  Opacity="0.34" Color="#000000" />
+            </Border.Effect>
+            <Grid>
+                <Image x:Name="ClipImage" Stretch="Uniform" />
+                <TextBlock x:Name="MissingText" Text="image not found"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontSize="11" Foreground="#999" Visibility="Collapsed" />
+            </Grid>
+        </Border>
+
+        <!-- Document clip: small card -->
+        <Border x:Name="DocCard" Margin="0,10,0,0" CornerRadius="6" Padding="12,10"
+                Background="{DynamicResource ChromeAltBrush}"
+                BorderBrush="{DynamicResource ChromeBorderBrush}" BorderThickness="1"
+                MouseLeftButtonDown="Drag_MouseLeftButtonDown"
+                MouseMove="Drag_MouseMove"
+                MouseLeftButtonUp="Drag_MouseLeftButtonUp">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="14" ShadowDepth="4" Direction="300"
+                                  Opacity="0.34" Color="#000000" />
+            </Border.Effect>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock x:Name="DocIcon" Text="&#xE7C3;" FontFamily="Segoe MDL2 Assets"
+                           FontSize="24" VerticalAlignment="Center"
+                           Foreground="{DynamicResource AccentBrush}" />
+                <StackPanel Margin="11,0,0,0" VerticalAlignment="Center">
+                    <TextBlock x:Name="DocName" FontSize="12.5" TextTrimming="CharacterEllipsis"
+                               MaxWidth="150" Foreground="{DynamicResource TextPrimaryBrush}" />
+                    <TextBlock x:Name="DocExt" FontSize="9.5" Margin="0,2,0,0"
+                               Foreground="{DynamicResource TextMutedBrush}" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Selection ring -->
+        <Border x:Name="SelectionRing" Margin="-2,8,-2,-2" CornerRadius="4"
+                BorderBrush="{DynamicResource AccentBrush}" BorderThickness="2"
+                IsHitTestVisible="False" Visibility="Collapsed" />
+
+        <!-- Pin -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top"
+              Width="20" Height="22" IsHitTestVisible="False">
+            <Ellipse Width="15" Height="15" Fill="#40000000" Margin="3,4,0,0" />
+            <Ellipse Width="15" Height="15" Fill="#E5604A" Margin="0,1,0,0" />
+            <Ellipse Width="5" Height="5" Fill="#80FFFFFF" Margin="-5,-4,0,0" />
+        </Grid>
+
+        <!-- Resize grip (images only) -->
+        <Border x:Name="ResizeHandle" Width="18" Height="18"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Background="Transparent" Cursor="SizeNWSE" Visibility="Collapsed"
+                MouseLeftButtonDown="Resize_MouseLeftButtonDown"
+                MouseMove="Resize_MouseMove"
+                MouseLeftButtonUp="Resize_MouseLeftButtonUp">
+            <Path Stroke="#88FFFFFF" StrokeThickness="1.3" Margin="0,0,3,3"
+                  Data="M 14,6 L 6,14 M 14,10 L 10,14" />
+        </Border>
+    </Grid>
+</UserControl>

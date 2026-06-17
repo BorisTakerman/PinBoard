@@ -1,0 +1,50 @@
+<UserControl x:Class="PinBoard.Controls.RopeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <UserControl.ContextMenu>
+        <ContextMenu x:Name="RopeMenu">
+            <MenuItem x:Name="ColorMenu" Header="Change color" />
+            <MenuItem Header="Toggle solid / dashed" Click="ToggleDashed_Click" />
+            <MenuItem Header="Edit label" Click="EditLabel_Click" />
+            <Separator />
+            <MenuItem Header="Send to front" Click="SendToFront_Click" />
+            <MenuItem Header="Send to back" Click="SendToBack_Click" />
+            <Separator />
+            <MenuItem Header="Delete" Click="Delete_Click" />
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <!-- Children are positioned in world coordinates on this canvas. -->
+    <Canvas x:Name="Root" Background="Transparent">
+        <!-- Selection glow (under everything) -->
+        <Path x:Name="SelectionGlow" StrokeThickness="8" Opacity="0.4"
+              StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+              IsHitTestVisible="False" Visibility="Collapsed" />
+        <!-- Wide transparent path for easy clicking -->
+        <Path x:Name="HitPath" Stroke="Transparent" StrokeThickness="16"
+              MouseLeftButtonDown="Rope_MouseLeftButtonDown" />
+        <!-- Rope: dark body + two twisting strands -->
+        <Path x:Name="BaseStroke" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+              IsHitTestVisible="False" />
+        <Path x:Name="StrandB" StrokeLineJoin="Round" IsHitTestVisible="False" />
+        <Path x:Name="StrandA" StrokeLineJoin="Round" IsHitTestVisible="False" />
+        <!-- Anchor dots -->
+        <Ellipse x:Name="AnchorA" Width="7" Height="7" IsHitTestVisible="False" />
+        <Ellipse x:Name="AnchorB" Width="7" Height="7" IsHitTestVisible="False" />
+        <!-- Midpoint label -->
+        <Border x:Name="LabelHost" CornerRadius="3" Padding="5,1"
+                Background="#CC0D0E10" Visibility="Collapsed">
+            <TextBox x:Name="LabelBox"
+                     Background="Transparent" BorderThickness="0" Padding="0"
+                     FontSize="10.5" Foreground="#E6E7EA" CaretBrush="#E6E7EA"
+                     IsReadOnly="True" IsHitTestVisible="False" Focusable="False"
+                     LostKeyboardFocus="LabelBox_LostKeyboardFocus"
+                     KeyDown="LabelBox_KeyDown"
+                     Text="{Binding Label, UpdateSourceTrigger=PropertyChanged}" />
+        </Border>
+    </Canvas>
+</UserControl>

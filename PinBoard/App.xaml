@@ -1,0 +1,20 @@
+<Application x:Class="PinBoard.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:conv="clr-namespace:PinBoard.Converters"
+             xmlns:local="clr-namespace:PinBoard">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Chrome.xaml" />
+                <ResourceDictionary Source="Themes/Controls.xaml" />
+                <ResourceDictionary Source="Themes/Menus.xaml" />
+                <!-- Board theme dictionary is injected at runtime by ThemeManager -->
+            </ResourceDictionary.MergedDictionaries>
+
+            <conv:EnumToActiveBrushConverter x:Key="EnumToActiveBrush" />
+            <conv:BoolToBrushConverter x:Key="BoolToBrush" />
+            <conv:ResourceKeyToBrushConverter x:Key="ResourceKeyToBrush" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

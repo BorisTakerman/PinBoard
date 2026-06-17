@@ -1,0 +1,57 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ============================================================
+         Shared dark chrome palette: titlebar, sidebar, bottom bar.
+         The board background itself comes from a swappable theme
+         dictionary (see Themes/BoardThemes/*.xaml).
+         ============================================================ -->
+
+    <!-- Surfaces -->
+    <Color x:Key="ChromeColor">#0d0e10</Color>
+    <Color x:Key="ChromeColorAlt">#111214</Color>
+    <Color x:Key="ChromeBorderColor">#1c1e22</Color>
+    <Color x:Key="ChromeHoverColor">#1a1c20</Color>
+    <Color x:Key="ChromeActiveColor">#26282d</Color>
+
+    <!-- Text -->
+    <Color x:Key="TextPrimaryColor">#e6e7ea</Color>
+    <Color x:Key="TextMutedColor">#7d818a</Color>
+    <Color x:Key="TextFaintColor">#565a62</Color>
+
+    <!-- Accent -->
+    <Color x:Key="AccentColor">#4f8cf0</Color>
+
+    <!-- Traffic lights -->
+    <Color x:Key="TrafficCloseColor">#ec6a5e</Color>
+    <Color x:Key="TrafficMinColor">#f4bf4f</Color>
+    <Color x:Key="TrafficMaxColor">#61c454</Color>
+
+    <!-- Rope swatch colors (shared with rope rendering) -->
+    <Color x:Key="RopeRedColor">#e0564f</Color>
+    <Color x:Key="RopeBlueColor">#4f8cf0</Color>
+    <Color x:Key="RopeGreenColor">#54b06a</Color>
+    <Color x:Key="RopePurpleColor">#9b6fe0</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="ChromeBrush" Color="{StaticResource ChromeColor}" />
+    <SolidColorBrush x:Key="ChromeAltBrush" Color="{StaticResource ChromeColorAlt}" />
+    <SolidColorBrush x:Key="ChromeBorderBrush" Color="{StaticResource ChromeBorderColor}" />
+    <SolidColorBrush x:Key="ChromeHoverBrush" Color="{StaticResource ChromeHoverColor}" />
+    <SolidColorBrush x:Key="ChromeActiveBrush" Color="{StaticResource ChromeActiveColor}" />
+
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}" />
+    <SolidColorBrush x:Key="TextFaintBrush" Color="{StaticResource TextFaintColor}" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+
+    <SolidColorBrush x:Key="TrafficCloseBrush" Color="{StaticResource TrafficCloseColor}" />
+    <SolidColorBrush x:Key="TrafficMinBrush" Color="{StaticResource TrafficMinColor}" />
+    <SolidColorBrush x:Key="TrafficMaxBrush" Color="{StaticResource TrafficMaxColor}" />
+
+    <SolidColorBrush x:Key="RopeRedBrush" Color="{StaticResource RopeRedColor}" />
+    <SolidColorBrush x:Key="RopeBlueBrush" Color="{StaticResource RopeBlueColor}" />
+    <SolidColorBrush x:Key="RopeGreenBrush" Color="{StaticResource RopeGreenColor}" />
+    <SolidColorBrush x:Key="RopePurpleBrush" Color="{StaticResource RopePurpleColor}" />
+
+</ResourceDictionary>
