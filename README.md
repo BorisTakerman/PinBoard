@@ -1,6 +1,6 @@
 # PinBoard
 
-A virtual corkboard for abstract planning — pin notes, string them together with ropes, and clip in images and documents, detective-board style. Fully local, no cloud, no accounts; every board is a single `.board` file on your disk.
+A virtual corkboard for abstract planning — pin notes, string them together with ropes, and clip in images and documents. Fully local, no cloud, no accounts; every board is a single `.board` file.
 
 [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 
@@ -13,8 +13,7 @@ A virtual corkboard for abstract planning — pin notes, string them together wi
 - **Ropes** — connect any two notes or clips with a curved, twisted-rope line. Choose color and solid/dashed, add a label, and send ropes in front of or behind your notes. Save your own reusable rope types.
 - **Image & document clips** — drag files straight onto the board (or pick them with a tool). Images show as framed, resizable thumbnails; documents as tidy cards. Double-click to open the file.
 - **Infinite canvas** — pan with middle-drag or the Hand tool, scroll to zoom (25%–400%).
-- **Themes** — six app UI themes (Midnight, Dark, Light, Sefora, Forest, Slate) plus six board backgrounds (four cork textures, dark dot-grid, plain) or a custom flat color. Vector textures stay crisp at any zoom.
-- **Custom colors everywhere** — a built-in HSV color-wheel picker.
+- **Themes** — six app UI themes (Midnight, Dark, Light, Sefora, Forest, Slate) plus six board backgrounds (four cork textures, dark dot-grid, plain) or a custom flat color.
 - **Undo / redo**, **autosave on close**, and a global save folder you choose.
 - **Keyboard-first** — `Q` note, `W` rope, `E` image, `R` document (all rebindable), `Ctrl+S` save, `Ctrl+O` open, `Ctrl+Z`/`Ctrl+Y` undo/redo, `Delete` to remove.
 
@@ -22,7 +21,7 @@ A virtual corkboard for abstract planning — pin notes, string them together wi
 
 Grab `PinBoard.exe` from the [Releases](../../releases) page and run it — **no installation, no .NET required** (the runtime is bundled). Windows 64-bit.
 
-> On first launch, Windows SmartScreen may show *"Windows protected your PC"* because the app isn't code-signed. Click **More info → Run anyway**. This is normal for unsigned indie apps.
+> On first launch, Windows SmartScreen may show *"Windows protected your PC"* because the app isn't code-signed. Click **More info → Run anyway**.
 
 Double-clicking a `.board` file opens it directly in PinBoard once you've run the app once.
 
