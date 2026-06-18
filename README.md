@@ -4,8 +4,7 @@ A virtual corkboard for abstract planning — pin notes, string them together wi
 
 [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 
-<!-- Add a screenshot here: drop an image at docs/screenshot.png and uncomment the line below -->
-<!-- ![PinBoard](docs/screenshot.png) -->
+![PinBoard in use — storyboarding a tabletop RPG character](docs/screenshot.png)
 
 ## Features
 
