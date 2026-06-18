@@ -9,6 +9,7 @@
         xmlns:local="clr-namespace:PinBoard"
         mc:Ignorable="d"
         Title="PinBoard"
+        Icon="PinBoard.ico"
         Height="760" Width="1180"
         MinHeight="480" MinWidth="760"
         WindowStartupLocation="Manual"
